@@ -43,6 +43,7 @@ extern "C" {
 	extern unsigned char pattern[208][128*4+4];  // MAX_PATT=208, MAX_PATTROWS=128
 	extern int pattlen[208];                      // MAX_PATT=208
 	extern int epnum[3];                          // MAX_CHN=3
+	extern unsigned *scrbuffer;
 	extern int eppos, epview, epcolumn, epchn;
 	extern int editmode, recordmode, epoctave, eamode, menu;
 	extern int epmarkchn, epmarkstart, epmarkend;
@@ -5855,7 +5856,6 @@ void CTestGT2Patterns::Run(ITestCallback *cb)
 	// least once).
 	step++;
 	{
-		extern unsigned *scrbuffer;
 		bool ok = true;
 
 		if (scrbuffer != NULL)
